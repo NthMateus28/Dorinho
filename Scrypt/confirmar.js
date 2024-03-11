@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const bordasSelecionadas =
             JSON.parse(localStorage.getItem("bordasSelecionadas")) || {};
 
-        let mensagem = `Quero realizar meu pedido! Segue os dados do meu Pedido:\n\n\n`;
+        let mensagem = `Quero realizar meu pedido! Segue os dados do meu Pedido:\n\n`;
         mensagem += `*Nome:* ${pedido.nome}\n\n`;
         mensagem += `*Telefone:* ${pedido.telefone}\n\n`;
         mensagem += `*Tipo de retirada:* ${pedido.tipoRetirada}\n\n`;
@@ -142,8 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mensagem += `\n*Soma dos produtos:* ${pedido.somaProdutos}\n\n`;
         mensagem += `*Frete:* ${pedido.frete}\n\n`;
         mensagem += `*Total:* ${pedido.total}\n\n\n`;
-        mensagem += `*CASO QUEIRA ACOMPANHAR SEU PEDIDO É SÓ CLICAR NO SEGUINTE LINK:*\n\n`;
-        mensagem += `https://bit.ly/Acompanhar_Pedido`;
+
 
         const linkWhatsApp = `https://api.whatsapp.com/send?phone=5554991965403&text=${encodeURIComponent(
             mensagem
