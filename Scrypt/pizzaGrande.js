@@ -105,13 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
         unidades.forEach(function (unidade) {
             var quantidade = parseInt(unidade.textContent);
             if (quantidade > 0) {
-                var sabor = unidade
+                var saborElement = unidade
                     .closest(".product")
                     .getAttribute("data-index");
-                // Remove o número e o hífen do final do nome do sabor
-                var saborNome = sabor.split("-")[0];
+                // Captura apenas o nome do sabor, excluindo o hífen e o número
+                var sabor = saborElement.split("-")[0].trim();
                 saboresSelecionados.push({
-                    sabor: saborNome, // Usa o nome do sabor sem o número
+                    sabor: sabor, // Utiliza apenas o nome do sabor
                     quantidade: quantidade,
                 });
             }
